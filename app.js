@@ -21,7 +21,7 @@ app.get('/cards', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
-    res.render('hello';
+    res.render('hello');
 })
 
 app.post('/hello', (req, res) => {
