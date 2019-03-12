@@ -45,6 +45,11 @@ app.post('/goodbye', (req, res) => {
     res.redirect('/hello');
 })
 
+app.use((err,req,res,next) => {
+    res.locals.error = err;
+    res.render('error', err);
+})
+
 app.listen(3000, () => {
     console.log ('The application is running on localhost:3000!')
 });
