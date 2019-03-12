@@ -7,6 +7,23 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.set('view engine', 'pug');
 
+app.use((req,res,next) => {
+    console.log('One');
+    next();
+});
+
+app.use((req,res,next) => {
+    console.log('Two');
+    next();
+});
+
+app.use((req,res,next) => {
+    console.log('Three');
+    next();
+});
+
+
+
 
 app.get('/', (req, res) => {
     const name = req.cookies.username;
