@@ -8,12 +8,6 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 app.use((req,res,next) => {
-    req.message = "This message made it!";
-    const err = new Error ("Test test test");
-    next(err);
-});
-
-app.use((req,res,next) => {
     console.log(req.message);
     next();
 });
@@ -45,9 +39,16 @@ app.post('/goodbye', (req, res) => {
     res.redirect('/hello');
 })
 
+app.use((req, res, next) => {
+    const err = new Error('Not Found!');
+    err.status = 404;
+    next(err);
+})
+
 app.use((err,req,res,next) => {
     res.locals.error = err;
-    res.render('error', err);
+    res.status(err.status);
+    res.render('error');
 })
 
 app.listen(3000, () => {
