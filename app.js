@@ -9,7 +9,8 @@ app.set('view engine', 'pug');
 
 app.use((req,res,next) => {
     req.message = "This message made it!";
-    next();
+    const err = new Error ("Test test test");
+    next(err);
 });
 
 app.use((req,res,next) => {
