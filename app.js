@@ -8,7 +8,6 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 
-
 const mainRoutes = require('./routes')
 const cardRoutes = require('./routes/cards')
 
