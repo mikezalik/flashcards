@@ -16,9 +16,10 @@ router.get('/:id', (req, res) => {
 if (!side) {
   res.redirect(`/cards/${id}?side=question`);
 }
-
+  const name = req.cookies.username;
   const text = cards[id][side];
   const { hint } = cards[id];
+
   const templateData = { text };
 
   const templateData = {id, text};
