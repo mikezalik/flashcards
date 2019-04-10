@@ -12,7 +12,12 @@ router.get('/:id', (req, res) => {
   const templateData = { text };
 
   if (side === 'question') {
-    templateData.template = hint;
+    templateData.hint = hint;
+    templateData.sideToShow = 'answer';
+    templateData.sideToShowDisplay = 'Answer';
+  } else if (side === 'answer') {
+    templateData.sideToShow = 'question';
+    templateData.sideToShowDisplay = 'Question';
   }
 
   res.render('card', templateData);
