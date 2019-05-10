@@ -8,10 +8,8 @@ app.use(cookieParser());
 app.use('/static', express.static('public'));
 app.set('view engine', 'pug');
 
-
 const mainRoutes = require('./routes')
 const cardRoutes = require('./routes/cards')
-
 
 app.use(mainRoutes);
 app.use('/cards', cardRoutes);
