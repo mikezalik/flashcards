@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/static', express.static('public'));
 
@@ -29,5 +29,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => {
-    console.log('The application is running on localhost:3000!')
+  console.log('The application is running on localhost:3000!');
 });
