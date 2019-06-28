@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
   res.redirect(`/cards/${flashcardId}`);
 });
 
+// eslint-disable-next-line consistent-return
 router.get('/:id', (req, res) => {
   const { side } = req.query;
   const { id } = req.params;
